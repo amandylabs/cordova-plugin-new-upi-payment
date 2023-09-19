@@ -102,6 +102,6 @@ Sample response of failure payment
 ```
 
 ### Release Notes:
-# 1.0.1:
+# 1.0.2:
  Initial Release of cordova plugin for upi transaction
  Response must be changed for different UPI apps. "Status" is the common key for verification for all UPI apps.
