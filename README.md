@@ -60,15 +60,15 @@ let failureCallback = function (err) {
     console.error("Issue in interaction and completion of payment with UPI", err);
 }
 /* Use Case 1: Open android intent for all UPI apps */
-Let UpiIntent = null;
+let UpiIntent = null;
 window["UPI"].acceptPayment(config, UpiIntent, successCallback, failureCallback);
 
 /* Use Case 2: Open single upi app */
-Let UpiIntent = 'com.phonepe.app';
+let UpiIntent = 'com.phonepe.app';
 window["UPI"].acceptPayment(config, UpiIntent, successCallback, failureCallback);
 
-/* Use Case : Open intent for custom UPI apps */
-Let UpiIntent = ['com.phonepe.app','com.google.android.apps.nbu.paisa.user'];
+/* Use Case 3: Open intent for custom UPI apps */
+let UpiIntent = ['com.phonepe.app','com.google.android.apps.nbu.paisa.user'];
 window["UPI"].acceptPayment(config, UpiIntent, successCallback, failureCallback);
 ```
 
