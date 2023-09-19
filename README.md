@@ -59,8 +59,17 @@ let successCallback = function (result) {
 let failureCallback = function (err) {
     console.error("Issue in interaction and completion of payment with UPI", err);
 }
+/* Use Case 1: Open android intent for all UPI apps */
+Let UpiIntent = null;
+window["UPI"].acceptPayment(config, UpiIntent, successCallback, failureCallback);
 
-window["UPI"].acceptPayment(config, successCallback, failureCallback);
+/* Use Case 2: Open single upi app */
+Let UpiIntent = 'com.phonepe.app';
+window["UPI"].acceptPayment(config, UpiIntent, successCallback, failureCallback);
+
+/* Use Case : Open intent for custom UPI apps */
+Let UpiIntent = ['com.phonepe.app','com.google.android.apps.nbu.paisa.user'];
+window["UPI"].acceptPayment(config, UpiIntent, successCallback, failureCallback);
 ```
 
 Sample response of successful payment
@@ -93,5 +102,6 @@ Sample response of failure payment
 ```
 
 ### Release Notes:
-# 1.0.0:
+# 1.0.1:
  Initial Release of cordova plugin for upi transaction
+ Response must be changed for different UPI apps. "Status" is the common key for verification for all UPI apps.
